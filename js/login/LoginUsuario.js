@@ -8,7 +8,7 @@ LoginUsuario_render({
 		localStorage.setItem("logado", true)
 		localStorage.setItem("nomeUsuario", nomeUsuario)
 	},
-	onLgout: () => {
+	onLogout: () => {
 		logado = false
 		localStorage.setItem("logado", false)
 		localStorage.removeItem("nomeUsuario")
