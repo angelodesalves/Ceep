@@ -63,10 +63,6 @@ const Mural = (function(_render, Filtro){
             salvaCartoes()
             cartao.on("mudanca.**", render)
             preparaCartao(cartao)
-
-            let listaImagens = Cartao.pegaImagens(cartao)
-
-
             render()
             return true
         }else{
