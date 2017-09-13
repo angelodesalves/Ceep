@@ -1,4 +1,4 @@
-let versao = 4
+let versao = 7
 
 let arquivos = [
 	"/",		// index.html
@@ -40,8 +40,12 @@ self.addEventListener("install", function(){
 //	Para garantr que todas as abas usem a mesma versão da app 
 self.addEventListener("activate", function(){
 	caches.open("ceep-arquivos-" + versao).then(cache => {
-		caches.delete("ceep-arquivos-" + (versao - 1))
-		caches.delete("ceep-arquivos")
+		cache.addAll(arquivos)
+            .then(function(){
+				caches.delete("ceep-arquivos-" + (versao - 1))
+				caches.delete("ceep-arquivos")
+			})
+
 	})
 })
 
