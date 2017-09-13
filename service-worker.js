@@ -35,6 +35,10 @@ let arquivos = [
 ]
 
 self.addEventListener("install", function(){
+	console.dir("Instalou!")
+})
+//	Para garantr que todas as abas usem a mesma versão da app 
+self.addEventListener("activate", function(){
 	caches.open("ceep-arquivos-" + versao).then(cache => {
 		caches.delete("ceep-arquivos-" + (versao - 1))
 		caches.delete("ceep-arquivos")
